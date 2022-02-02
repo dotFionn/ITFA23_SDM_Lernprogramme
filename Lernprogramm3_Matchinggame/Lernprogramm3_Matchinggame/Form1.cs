@@ -40,9 +40,11 @@ namespace Lernprogramm3_Matchinggame
         Control flipped2;
 
         int moves = 0;
-
+        int foundCards = 0;
+        int cardsToFind;
         private void Form1_Load(object sender, EventArgs e)
         {
+            cardsToFind = icons.Count;
             foreach (Control con in tableLayoutPanel1.Controls)
             {
                 int nextIndex = rdm.Next(icons.Count);
@@ -84,6 +86,11 @@ namespace Lernprogramm3_Matchinggame
                     }
                     if (flipped2 == null)
                     {
+                        if (flipped1 == con)
+                        {
+                            MessageBox.Show("Nicht schummeln!", "Mogelpott");
+                            return;
+                        }
                         flipped2 = con;
 
                         flipped2.Text = controlIcons[flipped2].Icon;
@@ -98,6 +105,13 @@ namespace Lernprogramm3_Matchinggame
                             }
                             flipped1 = null;
                             flipped2 = null;
+
+                            foundCards += 2;
+
+                            if (foundCards >= cardsToFind)
+                            {
+                                MessageBox.Show(string.Format("Herzlichen Glühstrumpf! Du hast das Memory in nur {0} Zügen ausgeräumt!", Math.Floor((double)moves / 2)), "Yeehaw!");
+                            }
                         }
                     }
                 };
