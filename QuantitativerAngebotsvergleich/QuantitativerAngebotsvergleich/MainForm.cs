@@ -2,7 +2,7 @@ namespace QuantitativerAngebotsvergleich
 {
     public partial class MainForm : Form
     {
-        internal readonly OfferMeta Meta = new();
+        internal OfferMeta Meta = new();
         private List<Offer> Offers = new();
 
         public MainForm()
@@ -28,6 +28,13 @@ namespace QuantitativerAngebotsvergleich
             RedrawFields();
         }
 
+        public void SaveMeta(OfferMeta meta)
+        {
+            Meta = meta;
+
+            buttonMetaData.Text = $"Metadaten | Währung: {Meta.Currency} | Menge: {Meta.Amount}";
+        }
+
         public void RedrawFields()
         {
 
@@ -51,7 +58,7 @@ namespace QuantitativerAngebotsvergleich
             offersTablePanel.Controls.Add(labelPriceEarlyPayDiscount, 0, 6);
             offersTablePanel.Controls.Add(labelDeliveryFee, 0, 7);
             offersTablePanel.Controls.Add(labelPriceDelivered, 0, 8);
-            
+
             // iterate through all offers and create controls and add them
             for (int i = 0; i < Offers.Count; i++)
             {
@@ -59,7 +66,7 @@ namespace QuantitativerAngebotsvergleich
                 Offer offer = Offers[i];
                 offer.offerId = i;
 
-                
+
 
                 // save column number
                 int colNumber = i + 1;
@@ -95,11 +102,9 @@ namespace QuantitativerAngebotsvergleich
                 offersTablePanel.Controls.Add(labelPriceDelivered, colNumber, 8);
             }
 
-            if (Offers.Count > 1)
-            {
-                buttonAddNewOffer.Enabled = false;
-            }
-        }
+            // disable add button if coutn of offers is 2 or more
+            buttonAddNewOffer.Enabled = Offers.Count < 2;
+        } 
 
         private void buttonAddNewOffer_Click(object sender, EventArgs e)
         {
@@ -109,6 +114,11 @@ namespace QuantitativerAngebotsvergleich
         private string FormatCurrency(dynamic val)
         {
             return $"{Meta.Currency} {val}";
+        }
+
+        private void buttonMetaData_Click(object sender, EventArgs e)
+        {
+            new MetaForm(this, Meta).Show();
         }
     }
 

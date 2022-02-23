@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonAddOffer = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.textBoxInputListPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelPriceDelivered = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.labelOutputPriceDelivered = new System.Windows.Forms.Label();
             this.labelInputLabel = new System.Windows.Forms.Label();
             this.textBoxInputLabel = new System.Windows.Forms.TextBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,16 +66,6 @@
             this.buttonAddOffer.Text = "Hinzufügen";
             this.buttonAddOffer.UseVisualStyleBackColor = true;
             this.buttonAddOffer.Click += new System.EventHandler(this.buttonAddOffer_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(12, 283);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(229, 23);
-            this.buttonCancel.TabIndex = 1;
-            this.buttonCancel.Text = "Abbrechen";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // textBoxInputListPrice
             // 
@@ -337,15 +327,25 @@
             this.textBoxInputLabel.TabIndex = 26;
             this.textBoxInputLabel.TextChanged += new System.EventHandler(this.FormFieldUpdate);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(15, 283);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(226, 23);
+            this.buttonDelete.TabIndex = 27;
+            this.buttonDelete.Text = "Entfernen";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // OfferDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 314);
+            this.ClientSize = new System.Drawing.Size(485, 316);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.textBoxInputLabel);
             this.Controls.Add(this.labelInputLabel);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddOffer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -362,7 +362,6 @@
         #endregion
 
         private Button buttonAddOffer;
-        private Button buttonCancel;
         private TextBox textBoxInputListPrice;
         private TableLayoutPanel tableLayoutPanel1;
         private Label labelOutputDiscount;
@@ -387,5 +386,6 @@
         private Label labelOutputPriceDelivered;
         private Label labelInputLabel;
         private TextBox textBoxInputLabel;
+        private Button buttonDelete;
     }
 }

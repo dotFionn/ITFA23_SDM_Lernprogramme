@@ -15,6 +15,7 @@ namespace QuantitativerAngebotsvergleich
         private MainForm mainForm;
         private Offer offer;
         private int existingOfferId;
+
         internal OfferDetail(MainForm mainForm, Offer existingOffer = null)
         {
             InitializeComponent();
@@ -26,6 +27,9 @@ namespace QuantitativerAngebotsvergleich
             {
                 this.Text = "Angebot hinzufügen";
                 offer = new();
+
+                // disable delete button
+                buttonDelete.Enabled = false;
             }
             else
             {
@@ -97,8 +101,10 @@ namespace QuantitativerAngebotsvergleich
             return;
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
+            mainForm.DeleteOffer(existingOfferId);
+
             Close();
         }
 

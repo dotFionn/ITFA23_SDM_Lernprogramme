@@ -30,15 +30,15 @@
         {
             this.buttonAddNewOffer = new System.Windows.Forms.Button();
             this.offersTablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPriceDelivered = new System.Windows.Forms.Label();
-            this.labelDeliveryFee = new System.Windows.Forms.Label();
-            this.labelPriceEarlyPayDiscount = new System.Windows.Forms.Label();
-            this.labelEarlyPayDiscount = new System.Windows.Forms.Label();
-            this.labelPriceTargetPurchase = new System.Windows.Forms.Label();
-            this.labelDiscount = new System.Windows.Forms.Label();
-            this.labelListPrice = new System.Windows.Forms.Label();
-            this.labelEdit = new System.Windows.Forms.Label();
             this.labelOfferTitle = new System.Windows.Forms.Label();
+            this.labelEdit = new System.Windows.Forms.Label();
+            this.labelListPrice = new System.Windows.Forms.Label();
+            this.labelDiscount = new System.Windows.Forms.Label();
+            this.labelPriceTargetPurchase = new System.Windows.Forms.Label();
+            this.labelEarlyPayDiscount = new System.Windows.Forms.Label();
+            this.labelPriceEarlyPayDiscount = new System.Windows.Forms.Label();
+            this.labelDeliveryFee = new System.Windows.Forms.Label();
+            this.labelPriceDelivered = new System.Windows.Forms.Label();
             this.buttonMetaData = new System.Windows.Forms.Button();
             this.offersTablePanel.SuspendLayout();
             this.SuspendLayout();
@@ -90,68 +90,14 @@
             this.offersTablePanel.Size = new System.Drawing.Size(776, 220);
             this.offersTablePanel.TabIndex = 1;
             // 
-            // labelPriceDelivered
+            // labelOfferTitle
             // 
-            this.labelPriceDelivered.AutoSize = true;
-            this.labelPriceDelivered.Location = new System.Drawing.Point(3, 155);
-            this.labelPriceDelivered.Name = "labelPriceDelivered";
-            this.labelPriceDelivered.Size = new System.Drawing.Size(69, 15);
-            this.labelPriceDelivered.TabIndex = 8;
-            this.labelPriceDelivered.Text = "Bezugspreis";
-            // 
-            // labelDeliveryFee
-            // 
-            this.labelDeliveryFee.AutoSize = true;
-            this.labelDeliveryFee.Location = new System.Drawing.Point(3, 135);
-            this.labelDeliveryFee.Name = "labelDeliveryFee";
-            this.labelDeliveryFee.Size = new System.Drawing.Size(79, 15);
-            this.labelDeliveryFee.TabIndex = 7;
-            this.labelDeliveryFee.Text = "Bezugskosten";
-            // 
-            // labelPriceEarlyPayDiscount
-            // 
-            this.labelPriceEarlyPayDiscount.AutoSize = true;
-            this.labelPriceEarlyPayDiscount.Location = new System.Drawing.Point(3, 115);
-            this.labelPriceEarlyPayDiscount.Name = "labelPriceEarlyPayDiscount";
-            this.labelPriceEarlyPayDiscount.Size = new System.Drawing.Size(93, 15);
-            this.labelPriceEarlyPayDiscount.TabIndex = 6;
-            this.labelPriceEarlyPayDiscount.Text = "Bareinkaufspreis";
-            // 
-            // labelEarlyPayDiscount
-            // 
-            this.labelEarlyPayDiscount.AutoSize = true;
-            this.labelEarlyPayDiscount.Location = new System.Drawing.Point(3, 95);
-            this.labelEarlyPayDiscount.Name = "labelEarlyPayDiscount";
-            this.labelEarlyPayDiscount.Size = new System.Drawing.Size(82, 15);
-            this.labelEarlyPayDiscount.TabIndex = 5;
-            this.labelEarlyPayDiscount.Text = "Liefererskonto";
-            // 
-            // labelPriceTargetPurchase
-            // 
-            this.labelPriceTargetPurchase.AutoSize = true;
-            this.labelPriceTargetPurchase.Location = new System.Drawing.Point(3, 75);
-            this.labelPriceTargetPurchase.Name = "labelPriceTargetPurchase";
-            this.labelPriceTargetPurchase.Size = new System.Drawing.Size(95, 15);
-            this.labelPriceTargetPurchase.TabIndex = 4;
-            this.labelPriceTargetPurchase.Text = "Zieleinkaufspreis";
-            // 
-            // labelDiscount
-            // 
-            this.labelDiscount.AutoSize = true;
-            this.labelDiscount.Location = new System.Drawing.Point(3, 55);
-            this.labelDiscount.Name = "labelDiscount";
-            this.labelDiscount.Size = new System.Drawing.Size(67, 15);
-            this.labelDiscount.TabIndex = 3;
-            this.labelDiscount.Text = "Lieferrabatt";
-            // 
-            // labelListPrice
-            // 
-            this.labelListPrice.AutoSize = true;
-            this.labelListPrice.Location = new System.Drawing.Point(3, 35);
-            this.labelListPrice.Name = "labelListPrice";
-            this.labelListPrice.Size = new System.Drawing.Size(107, 15);
-            this.labelListPrice.TabIndex = 2;
-            this.labelListPrice.Text = "Listeneinkaufspreis";
+            this.labelOfferTitle.AutoSize = true;
+            this.labelOfferTitle.Location = new System.Drawing.Point(3, 0);
+            this.labelOfferTitle.Name = "labelOfferTitle";
+            this.labelOfferTitle.Size = new System.Drawing.Size(78, 15);
+            this.labelOfferTitle.TabIndex = 0;
+            this.labelOfferTitle.Text = "Angebotstitel";
             // 
             // labelEdit
             // 
@@ -162,14 +108,68 @@
             this.labelEdit.TabIndex = 1;
             this.labelEdit.Text = "Bearbeiten/Löschen";
             // 
-            // labelOfferTitle
+            // labelListPrice
             // 
-            this.labelOfferTitle.AutoSize = true;
-            this.labelOfferTitle.Location = new System.Drawing.Point(3, 0);
-            this.labelOfferTitle.Name = "labelOfferTitle";
-            this.labelOfferTitle.Size = new System.Drawing.Size(78, 15);
-            this.labelOfferTitle.TabIndex = 0;
-            this.labelOfferTitle.Text = "Angebotstitel";
+            this.labelListPrice.AutoSize = true;
+            this.labelListPrice.Location = new System.Drawing.Point(3, 35);
+            this.labelListPrice.Name = "labelListPrice";
+            this.labelListPrice.Size = new System.Drawing.Size(107, 15);
+            this.labelListPrice.TabIndex = 2;
+            this.labelListPrice.Text = "Listeneinkaufspreis";
+            // 
+            // labelDiscount
+            // 
+            this.labelDiscount.AutoSize = true;
+            this.labelDiscount.Location = new System.Drawing.Point(3, 55);
+            this.labelDiscount.Name = "labelDiscount";
+            this.labelDiscount.Size = new System.Drawing.Size(67, 15);
+            this.labelDiscount.TabIndex = 3;
+            this.labelDiscount.Text = "Lieferrabatt";
+            // 
+            // labelPriceTargetPurchase
+            // 
+            this.labelPriceTargetPurchase.AutoSize = true;
+            this.labelPriceTargetPurchase.Location = new System.Drawing.Point(3, 75);
+            this.labelPriceTargetPurchase.Name = "labelPriceTargetPurchase";
+            this.labelPriceTargetPurchase.Size = new System.Drawing.Size(95, 15);
+            this.labelPriceTargetPurchase.TabIndex = 4;
+            this.labelPriceTargetPurchase.Text = "Zieleinkaufspreis";
+            // 
+            // labelEarlyPayDiscount
+            // 
+            this.labelEarlyPayDiscount.AutoSize = true;
+            this.labelEarlyPayDiscount.Location = new System.Drawing.Point(3, 95);
+            this.labelEarlyPayDiscount.Name = "labelEarlyPayDiscount";
+            this.labelEarlyPayDiscount.Size = new System.Drawing.Size(82, 15);
+            this.labelEarlyPayDiscount.TabIndex = 5;
+            this.labelEarlyPayDiscount.Text = "Liefererskonto";
+            // 
+            // labelPriceEarlyPayDiscount
+            // 
+            this.labelPriceEarlyPayDiscount.AutoSize = true;
+            this.labelPriceEarlyPayDiscount.Location = new System.Drawing.Point(3, 115);
+            this.labelPriceEarlyPayDiscount.Name = "labelPriceEarlyPayDiscount";
+            this.labelPriceEarlyPayDiscount.Size = new System.Drawing.Size(93, 15);
+            this.labelPriceEarlyPayDiscount.TabIndex = 6;
+            this.labelPriceEarlyPayDiscount.Text = "Bareinkaufspreis";
+            // 
+            // labelDeliveryFee
+            // 
+            this.labelDeliveryFee.AutoSize = true;
+            this.labelDeliveryFee.Location = new System.Drawing.Point(3, 135);
+            this.labelDeliveryFee.Name = "labelDeliveryFee";
+            this.labelDeliveryFee.Size = new System.Drawing.Size(79, 15);
+            this.labelDeliveryFee.TabIndex = 7;
+            this.labelDeliveryFee.Text = "Bezugskosten";
+            // 
+            // labelPriceDelivered
+            // 
+            this.labelPriceDelivered.AutoSize = true;
+            this.labelPriceDelivered.Location = new System.Drawing.Point(3, 155);
+            this.labelPriceDelivered.Name = "labelPriceDelivered";
+            this.labelPriceDelivered.Size = new System.Drawing.Size(69, 15);
+            this.labelPriceDelivered.TabIndex = 8;
+            this.labelPriceDelivered.Text = "Bezugspreis";
             // 
             // buttonMetaData
             // 
@@ -181,6 +181,7 @@
             this.buttonMetaData.Text = "Metadaten";
             this.buttonMetaData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMetaData.UseVisualStyleBackColor = true;
+            this.buttonMetaData.Click += new System.EventHandler(this.buttonMetaData_Click);
             // 
             // MainForm
             // 
