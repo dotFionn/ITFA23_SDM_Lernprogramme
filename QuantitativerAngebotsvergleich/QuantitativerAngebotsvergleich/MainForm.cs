@@ -75,31 +75,31 @@ namespace QuantitativerAngebotsvergleich
                 Button editButton = new() { Text = "Bearbeiten" };
                 editButton.Click += (s, e) => { new OfferDetail(this, offer).Show(); };
 
-                Label labelTitle = new() { Text = offer.Label };
-                Label labelListPrice = new() { Text = FormatCurrency(offer.ListPrice) };
-                Label labelDiscount = new() { Text = FormatCurrency(offer.DiscountAmount) };
-                Label labelPriceTargetPurchase = new() { Text = FormatCurrency(offer.PriceTargetPurchase) };
-                Label labelEarlyPayDiscount = new() { Text = FormatCurrency(offer.EarlyPayDiscountAmount) };
-                Label labelPriceEarlyPay = new() { Text = FormatCurrency(offer.PriceEarlyPayDiscount) };
-                Label labelDeliveryFee = new() { Text = FormatCurrency(offer.DeliveryFee) };
-                Label labelPriceDelivered = new() { Text = FormatCurrency(offer.PriceDelivered) };
+                Label labelShowTitle = new() { Text = offer.Label };
+                Label labelShowListPrice = new() { Text = FormatCurrency(offer.ListPrice) };
+                Label labelShowDiscount = new() { Text = FormatCurrency(offer.DiscountAmount) };
+                Label labelShowPriceTargetPurchase = new() { Text = FormatCurrency(offer.PriceTargetPurchase) };
+                Label labelShowEarlyPayDiscount = new() { Text = FormatCurrency(offer.EarlyPayDiscountAmount) };
+                Label labelShowPriceEarlyPay = new() { Text = FormatCurrency(offer.PriceEarlyPayDiscount) };
+                Label labelShowDeliveryFee = new() { Text = FormatCurrency(offer.DeliveryFee) };
+                Label labelShowPriceDelivered = new() { Text = FormatCurrency(offer.PriceDelivered) };
 
                 Console.WriteLine("Adding Controls to Column {0}, ColumnCount is {1}", colNumber, offersTablePanel.ColumnCount);
 
-                labelTitle.MinimumSize = labelTitle.GetPreferredSize(default);
+                labelShowTitle.MinimumSize = labelShowTitle.GetPreferredSize(default);
 
                 // add col styling
                 offersTablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
-                offersTablePanel.Controls.Add(labelTitle, colNumber, 0);
+                offersTablePanel.Controls.Add(labelShowTitle, colNumber, 0);
                 offersTablePanel.Controls.Add(editButton, colNumber, 1);
-                offersTablePanel.Controls.Add(labelListPrice, colNumber, 2);
-                offersTablePanel.Controls.Add(labelDiscount, colNumber, 3);
-                offersTablePanel.Controls.Add(labelPriceTargetPurchase, colNumber, 4);
-                offersTablePanel.Controls.Add(labelEarlyPayDiscount, colNumber, 5);
-                offersTablePanel.Controls.Add(labelPriceEarlyPay, colNumber, 6);
-                offersTablePanel.Controls.Add(labelDeliveryFee, colNumber, 7);
-                offersTablePanel.Controls.Add(labelPriceDelivered, colNumber, 8);
+                offersTablePanel.Controls.Add(labelShowListPrice, colNumber, 2);
+                offersTablePanel.Controls.Add(labelShowDiscount, colNumber, 3);
+                offersTablePanel.Controls.Add(labelShowPriceTargetPurchase, colNumber, 4);
+                offersTablePanel.Controls.Add(labelShowEarlyPayDiscount, colNumber, 5);
+                offersTablePanel.Controls.Add(labelShowPriceEarlyPay, colNumber, 6);
+                offersTablePanel.Controls.Add(labelShowDeliveryFee, colNumber, 7);
+                offersTablePanel.Controls.Add(labelShowPriceDelivered, colNumber, 8);
             }
 
             // disable add button if coutn of offers is 2 or more
