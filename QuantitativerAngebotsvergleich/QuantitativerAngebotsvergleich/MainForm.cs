@@ -59,14 +59,22 @@ namespace QuantitativerAngebotsvergleich
             offersTablePanel.Controls.Add(labelDeliveryFee, 0, 7);
             offersTablePanel.Controls.Add(labelPriceDelivered, 0, 8);
 
+            Offer cheapestOffer = null;
+
+            foreach (Offer offer in Offers)
+            {
+                if (cheapestOffer == null || offer.PriceDelivered < cheapestOffer.PriceDelivered)
+                {
+                    cheapestOffer = offer;
+                }
+            }
+
             // iterate through all offers and create controls and add them
             for (int i = 0; i < Offers.Count; i++)
             {
                 // take offer and set offer id for later modification
                 Offer offer = Offers[i];
                 offer.offerId = i;
-
-
 
                 // save column number
                 int colNumber = i + 1;
@@ -83,6 +91,11 @@ namespace QuantitativerAngebotsvergleich
                 Label labelShowPriceEarlyPay = new() { Text = FormatCurrency(offer.PriceEarlyPayDiscount) };
                 Label labelShowDeliveryFee = new() { Text = FormatCurrency(offer.DeliveryFee) };
                 Label labelShowPriceDelivered = new() { Text = FormatCurrency(offer.PriceDelivered) };
+
+                if (offer == cheapestOffer)
+                {
+                    labelShowPriceDelivered.BackColor = Color.Green;
+                }
 
                 Console.WriteLine("Adding Controls to Column {0}, ColumnCount is {1}", colNumber, offersTablePanel.ColumnCount);
 

@@ -23,6 +23,6 @@ namespace QuantitativerAngebotsvergleich
         public double PriceTargetPurchase { get => Math.Round(ListPrice - DiscountAmount, 2); }
         public double EarlyPayDiscountAmount { get => Math.Round(PriceTargetPurchase * EarlyPayDiscount, 2); }
         public double PriceEarlyPayDiscount { get => Math.Round(PriceTargetPurchase - EarlyPayDiscountAmount, 2); }
-        public double PriceDelivered { get => Math.Round(PriceTargetPurchase + DeliveryFee, 2); }
+        public double PriceDelivered { get => Math.Round(PriceEarlyPayDiscount + DeliveryFee, 2); }
     }
 }
