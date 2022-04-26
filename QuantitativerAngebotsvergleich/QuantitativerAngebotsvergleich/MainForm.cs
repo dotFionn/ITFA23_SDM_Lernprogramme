@@ -2,12 +2,13 @@ namespace QuantitativerAngebotsvergleich
 {
     public partial class MainForm : Form
     {
-        internal OfferMeta Meta = new();
+        internal OfferMeta Meta;
         private List<Offer> Offers = new();
 
         public MainForm()
         {
             InitializeComponent();
+            SaveMeta(new());
         }
 
         public void AddOffer(Offer offer)
@@ -117,7 +118,7 @@ namespace QuantitativerAngebotsvergleich
 
             // disable add button if coutn of offers is 2 or more
             buttonAddNewOffer.Enabled = Offers.Count < 2;
-        } 
+        }
 
         private void buttonAddNewOffer_Click(object sender, EventArgs e)
         {
@@ -137,7 +138,21 @@ namespace QuantitativerAngebotsvergleich
 
     public class OfferMeta
     {
-        public int Amount { get; set; } = 0;
+        private int _amount = 0;
+
+        public int Amount {
+            get {
+                if (_amount < 1) {
+                    return 1;
+                } else {
+                    return _amount;
+                }
+            }
+            set {
+                _amount = value;
+            }
+        }
+
         public string Currency { get; set; } = "€";
     }
 }

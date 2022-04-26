@@ -27,7 +27,8 @@ namespace QuantitativerAngebotsvergleich
 
         internal void RedrawFields()
         {
-
+            textBoxAmount.Text = meta.Amount.ToString();
+            textBoxCurrency.Text = meta.Currency;
         }
 
         private void FormFieldUpdate(Control sender)

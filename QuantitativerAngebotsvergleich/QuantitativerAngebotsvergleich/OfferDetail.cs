@@ -23,6 +23,11 @@ namespace QuantitativerAngebotsvergleich
             this.existingOfferId = existingOffer == null ? -1 : existingOffer.offerId;
             this.mainForm = mainForm;
 
+            // set up list box for delivery option
+            listBoxDeliveryOption.DataSource = DeliveryOptionUtils.GetPossibleDeliveryOptionDetails();
+            listBoxDeliveryOption.DisplayMember = nameof(DeliveryOptionDetails.Label);
+            listBoxDeliveryOption.ValueMember = nameof(DeliveryOptionDetails.DeliveryOption);
+
             if (existingOffer == null)
             {
                 this.Text = "Angebot hinzufügen";
@@ -51,12 +56,19 @@ namespace QuantitativerAngebotsvergleich
 
         private void RedrawFields()
         {
+            if (offer == null)
+            {
+                Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                return;
+            }
+            
             labelOutputListPrice.Text = $"{mainForm.Meta.Currency} {offer.ListPrice}";
             labelOutputDiscount.Text = $"{mainForm.Meta.Currency} {offer.DiscountAmount}";
             labelOutputPriceTargetPurchase.Text = $"{mainForm.Meta.Currency} {offer.PriceTargetPurchase}";
             labelOutputEarlyPayDiscount.Text = $"{mainForm.Meta.Currency} {offer.EarlyPayDiscountAmount}";
             labelOutputPriceEarlyPayDiscount.Text = $"{mainForm.Meta.Currency} {offer.PriceEarlyPayDiscount}";
             labelOutputDeliveryFee.Text = $"{mainForm.Meta.Currency} {offer.DeliveryFee}";
+            labelDeliveryTypeDiscount.Text = $"{mainForm.Meta.Currency} {offer.DiscountAmountFromDeliveryOption}";
             labelOutputPriceDelivered.Text = $"{mainForm.Meta.Currency} {offer.PriceDelivered}";
         }
 
@@ -83,6 +95,10 @@ namespace QuantitativerAngebotsvergleich
                 else if (sender == textBoxInputLabel)
                 {
                     offer.Label = sender.Text;
+                }
+                else if (sender == listBoxDeliveryOption)
+                {
+                    offer.DeliveryOption = (DeliveryOption)listBoxDeliveryOption.SelectedValue;
                 }
             }
             catch (Exception e) { }

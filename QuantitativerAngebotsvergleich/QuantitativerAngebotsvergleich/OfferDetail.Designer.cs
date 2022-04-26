@@ -31,7 +31,6 @@
             this.buttonAddOffer = new System.Windows.Forms.Button();
             this.textBoxInputListPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPriceDelivered = new System.Windows.Forms.Label();
             this.labelOutputDiscount = new System.Windows.Forms.Label();
             this.labelField = new System.Windows.Forms.Label();
             this.labelInput = new System.Windows.Forms.Label();
@@ -51,6 +50,10 @@
             this.labelOutputPriceEarlyPayDiscount = new System.Windows.Forms.Label();
             this.labelOutputDeliveryFee = new System.Windows.Forms.Label();
             this.labelOutputPriceDelivered = new System.Windows.Forms.Label();
+            this.labelPriceDelivered = new System.Windows.Forms.Label();
+            this.labelInputDeliveryTypeDiscount = new System.Windows.Forms.Label();
+            this.labelDeliveryTypeDiscount = new System.Windows.Forms.Label();
+            this.listBoxDeliveryOption = new System.Windows.Forms.ComboBox();
             this.labelInputLabel = new System.Windows.Forms.Label();
             this.textBoxInputLabel = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -59,7 +62,7 @@
             // 
             // buttonAddOffer
             // 
-            this.buttonAddOffer.Location = new System.Drawing.Point(247, 283);
+            this.buttonAddOffer.Location = new System.Drawing.Point(247, 313);
             this.buttonAddOffer.Name = "buttonAddOffer";
             this.buttonAddOffer.Size = new System.Drawing.Size(226, 23);
             this.buttonAddOffer.TabIndex = 0;
@@ -81,7 +84,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.labelPriceDelivered, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelOutputDiscount, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxInputListPrice, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelField, 0, 0);
@@ -101,10 +103,14 @@
             this.tableLayoutPanel1.Controls.Add(this.labelOutputEarlyPayDiscount, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelOutputPriceEarlyPayDiscount, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelOutputDeliveryFee, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelOutputPriceDelivered, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelOutputPriceDelivered, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelPriceDelivered, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.labelInputDeliveryTypeDiscount, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelDeliveryTypeDiscount, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.listBoxDeliveryOption, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 35);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -113,18 +119,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(461, 242);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(461, 279);
             this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // labelPriceDelivered
-            // 
-            this.labelPriceDelivered.AutoSize = true;
-            this.labelPriceDelivered.Location = new System.Drawing.Point(3, 200);
-            this.labelPriceDelivered.Name = "labelPriceDelivered";
-            this.labelPriceDelivered.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.labelPriceDelivered.Size = new System.Drawing.Size(69, 21);
-            this.labelPriceDelivered.TabIndex = 14;
-            this.labelPriceDelivered.Text = "Bezugspreis";
             // 
             // labelOutputDiscount
             // 
@@ -303,12 +300,52 @@
             // labelOutputPriceDelivered
             // 
             this.labelOutputPriceDelivered.AutoSize = true;
-            this.labelOutputPriceDelivered.Location = new System.Drawing.Point(309, 200);
+            this.labelOutputPriceDelivered.Location = new System.Drawing.Point(309, 230);
             this.labelOutputPriceDelivered.Name = "labelOutputPriceDelivered";
             this.labelOutputPriceDelivered.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.labelOutputPriceDelivered.Size = new System.Drawing.Size(145, 21);
             this.labelOutputPriceDelivered.TabIndex = 25;
             this.labelOutputPriceDelivered.Text = "labelOutputPriceDelivered";
+            // 
+            // labelPriceDelivered
+            // 
+            this.labelPriceDelivered.AutoSize = true;
+            this.labelPriceDelivered.Location = new System.Drawing.Point(3, 230);
+            this.labelPriceDelivered.Name = "labelPriceDelivered";
+            this.labelPriceDelivered.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.labelPriceDelivered.Size = new System.Drawing.Size(69, 21);
+            this.labelPriceDelivered.TabIndex = 14;
+            this.labelPriceDelivered.Text = "Bezugspreis";
+            // 
+            // labelInputDeliveryTypeDiscount
+            // 
+            this.labelInputDeliveryTypeDiscount.AutoSize = true;
+            this.labelInputDeliveryTypeDiscount.Location = new System.Drawing.Point(3, 200);
+            this.labelInputDeliveryTypeDiscount.Name = "labelInputDeliveryTypeDiscount";
+            this.labelInputDeliveryTypeDiscount.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.labelInputDeliveryTypeDiscount.Size = new System.Drawing.Size(89, 21);
+            this.labelInputDeliveryTypeDiscount.TabIndex = 26;
+            this.labelInputDeliveryTypeDiscount.Text = "Bezugsartrabatt";
+            // 
+            // labelDeliveryTypeDiscount
+            // 
+            this.labelDeliveryTypeDiscount.AutoSize = true;
+            this.labelDeliveryTypeDiscount.Location = new System.Drawing.Point(309, 200);
+            this.labelDeliveryTypeDiscount.Name = "labelDeliveryTypeDiscount";
+            this.labelDeliveryTypeDiscount.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.labelDeliveryTypeDiscount.Size = new System.Drawing.Size(145, 21);
+            this.labelDeliveryTypeDiscount.TabIndex = 27;
+            this.labelDeliveryTypeDiscount.Text = "labelDeliveryTypeDiscount";
+            // 
+            // listBoxDeliveryOption
+            // 
+            this.listBoxDeliveryOption.FormattingEnabled = true;
+            this.listBoxDeliveryOption.ItemHeight = 15;
+            this.listBoxDeliveryOption.Location = new System.Drawing.Point(156, 203);
+            this.listBoxDeliveryOption.Name = "listBoxDeliveryOption";
+            this.listBoxDeliveryOption.Size = new System.Drawing.Size(146, 19);
+            this.listBoxDeliveryOption.TabIndex = 28;
+            this.listBoxDeliveryOption.SelectedIndexChanged += new System.EventHandler(this.FormFieldUpdate);
             // 
             // labelInputLabel
             // 
@@ -329,7 +366,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(15, 283);
+            this.buttonDelete.Location = new System.Drawing.Point(12, 313);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(226, 23);
             this.buttonDelete.TabIndex = 27;
@@ -341,7 +378,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 316);
+            this.ClientSize = new System.Drawing.Size(485, 384);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.textBoxInputLabel);
             this.Controls.Add(this.labelInputLabel);
@@ -387,5 +424,8 @@
         private Label labelInputLabel;
         private TextBox textBoxInputLabel;
         private Button buttonDelete;
+        private Label labelInputDeliveryTypeDiscount;
+        private Label labelDeliveryTypeDiscount;
+        private ComboBox listBoxDeliveryOption;
     }
 }
