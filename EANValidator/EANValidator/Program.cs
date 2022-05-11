@@ -1,8 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-
-
 while (true)
 {
     string mode = "NULL"; int givenCheckNo = 0;
@@ -10,13 +8,13 @@ while (true)
     Console.Write("Pls input complete EAN:\n-> ");
     string input = Console.ReadLine();
 
+    if (input == null || input == "") continue;
+
     if (input == "q")
     {
         Console.WriteLine("Bye bye!");
         return;
     }
-
-    if (input == null || input == "") continue;
 
     string[] split = input.Select(x => x.ToString()).ToArray();
 
