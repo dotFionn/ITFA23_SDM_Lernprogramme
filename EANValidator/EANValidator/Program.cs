@@ -33,6 +33,7 @@ while (true)
 
         if (!int.TryParse(sign, out val))
         {
+            skip = true;
             break;
         }
 
