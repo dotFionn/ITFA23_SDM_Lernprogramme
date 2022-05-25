@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace dotFionn.Checksum.Utils
 {
@@ -14,6 +15,11 @@ namespace dotFionn.Checksum.Utils
             }
 
             return digitSum;
+        }
+
+        public static string[] Split(this string inString)
+        {
+            return inString.Select(x => x.ToString()).ToArray();
         }
     }
 }
