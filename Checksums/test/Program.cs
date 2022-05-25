@@ -8,7 +8,7 @@ namespace test
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine(123.digitSum());
+            Console.WriteLine(123.DigitSum());
             
         }
     }

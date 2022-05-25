@@ -4,7 +4,7 @@ namespace dotFionn.Checksum.Utils
 {
     public static class Extensions
     {
-        public static int digitSum(this int inInt)
+        public static int DigitSum(this int inInt)
         {
             int digitSum = 0;
 
