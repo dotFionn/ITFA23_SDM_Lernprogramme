@@ -17,7 +17,7 @@ namespace dotFionn.Checksum.Utils
             return digitSum;
         }
 
-        public static string[] Split(this string inString)
+        public static string[] SplitAllDigits(this string inString)
         {
             return inString.Select(x => x.ToString()).ToArray();
         }
